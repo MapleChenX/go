@@ -29,3 +29,7 @@ func (this *User) ListenMessage() {
 		this.conn.Write([]byte(msg + "\n"))
 	}
 }
+
+func (this *User) sendMessage(msg string) {
+	this.C <- msg
+}
